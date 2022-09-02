@@ -13,45 +13,68 @@
 
 <body>
     <header>
-        <div class="navbar bg-base-100">
-            <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">News.online</a>
-            </div>
-            <div class="flex-none">
-                <!-- <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle">
-                        <div class="indicator">
-                           
-                            <span class="badge badge-sm indicator-item">News</span>
-                        </div>
-                    </label>
-                   
-                </div> -->
-                <div>
-                    <span>News</span>
-                    <span class="ml-4 mr-3">Blogs</span>
+        <!-- navbar  -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                    <a class="btn btn-ghost normal-case text-xl">News.online</a>
                 </div>
-                <div class="dropdown dropdown-end">
-                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                        <div class="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" />
-                        </div>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a class="justify-between">
-                                Profile
-                                <span class="badge">New</span>
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
-                    </ul>
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn btn-ghost btn-circle">
+                            <div class="indicator">
+                                <span class="badge badge-sm indicator-item">News</span>
+                            </div>
+                        </label>
+                        <label tabindex="0" class="btn btn-ghost btn-circle ml-5 mr-4">
+                            <div class="indicator">
+                                <span class="badge badge-sm indicator-item">Blogs</span>
+                            </div>
+                        </label>
+
+                    </div>
+                    <div class="dropdown dropdown-end">
+                        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                            <div class="w-10 rounded-full">
+                                <img src="https://placeimg.com/80/80/people" />
+                            </div>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            <li>
+                                <a class="justify-between">
+                                    Profile
+                                    <span class="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </nav>
+        <!-- news section  -->
+        <div class="w-9/12 mx-auto flex justify-center">
+            <ul id="news-menu" class="menu menu-horizontal bg-base-100 rounded-box p-2 gap-4 ">
+               
+            </ul>
         </div>
     </header>
+    <main class="w-9/12 mx-auto mt-10">
+        <section >
+            <div id="news-card" class="card lg:card-side bg-base-100 shadow-xl">
+                <figure><img src="https://placeimg.com/400/300/arch" alt="Album"></figure>
+                <div class="card-body">
+                  <h2 class="card-title">New album is released!</h2>
+                  <p>Click the button to listen on Spotiwhy app.</p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Listen</button>
+                  </div>
+                </div>
+              </div>
+        </section>
+    </main>
     <script src="js/app.js"></script>
 </body>
 
