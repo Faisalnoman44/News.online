@@ -17,16 +17,20 @@ const showNewsMenu = async (newsAll) => {
     });
 }
 
+const spinner = document.getElementById('spinner');
 const loadNews = async (categoryId) => {
+    
+    spinner.classList.remove('hidden');
     // console.log(categoryId)
     const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId}`);
     const data = await res.json();
-    displayNews(data.data,categoryName);
+    displayNews(data.data);
 }
 
 const displayNews = async (allNews) => {
     // console.log(allNews)
     
+
     const newsCard = document.getElementById('news-card');
     newsCard.innerHTML = '';
 
@@ -38,6 +42,7 @@ const displayNews = async (allNews) => {
 
     if(allNews.length === 0){
         newsCard.innerHTML = `<h2 class="text-4xl text-center text-teal-500	">No Result Found</h2>`;
+        spinner.classList.add('hidden')
         return;
     }
     const items= allNews.length;
@@ -73,7 +78,7 @@ const displayNews = async (allNews) => {
             </div>`
         newsCard.appendChild(div);
         });
-
+        spinner.classList.add('hidden')
 }
 
 const showDetails = async(picture,details)=>{
@@ -101,6 +106,9 @@ const allNews = async() =>{
 const newsSection = document.getElementById('news-section').addEventListener('click',function(){
     allNews();
 })
+
+
+
 allNews();
 // loadNews();
 loadNewsCategory()
