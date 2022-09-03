@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <header>
         <!-- navbar  -->
@@ -54,17 +55,27 @@
             </div>
         </nav>
         <!-- news section  -->
-        <div class="w-9/12 mx-auto flex justify-center">
+        <div class=" w-9/12 mx-auto flex justify-center">
             <ul id="news-menu" class="menu menu-horizontal bg-base-100 rounded-box">
 
             </ul>
     </header>
     <main class="w-9/12 mx-auto mt-10">
+        <!-- no found result  -->
+        <section id="not-found">
+
+        </section>
         <section>
-            <div id="news-card">
+            <div id="news-card" class="grid grid-cols-1">
 
             </div>
         </section>
+
+        <!-- modal  -->
+        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+        <div id="modal-body" class="modal modal-bottom sm:modal-middle">
+            <img src="" alt="">
+        </div>
     </main>
     <script src="js/app.js"></script>
 </body>
