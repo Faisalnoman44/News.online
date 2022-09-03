@@ -14,7 +14,6 @@ const showNewsMenu = async (newsAll) => {
     try {
         const newsMenu = document.getElementById('news-menu');
         newsAll.forEach(news => {
-            // console.log(news);
             const li = document.createElement('li');
             li.classList.add("mx-5")
             li.innerHTML = `
@@ -32,7 +31,6 @@ const spinner = document.getElementById('spinner');
 const loadNews = async (categoryId) => {
     try {
         spinner.classList.remove('hidden');
-        // console.log(categoryId)
         const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId}`);
         const data = await res.json();
         displayNews(data.data);
@@ -65,9 +63,7 @@ const displayNews = async (allNews) => {
         allNews.sort((a, b) => {
             return b.total_view - a.total_view;
         })
-
         
-        // console.log(items);
         allNews.forEach(news => {
            
             console.log(news)
@@ -97,19 +93,16 @@ const displayNews = async (allNews) => {
                     </div>
                 </div > `
             newsCard.appendChild(div);
-            // console.log(news.rating);
-            // console.log(news.thumbnail_url, news.details);
         });
         spinner.classList.add('hidden')
     } catch (error) {
         console.log(`The error: ${error} `);
     }
-    // console.log(allNews)
 
 }
 
 const showDetails = (picture, title, rating,name,badge) => {
-    // console.log(data);
+
     const modalBody = document.getElementById('modal-body');
     modalBody.innerHTML = '';
     const div = document.createElement('div');
