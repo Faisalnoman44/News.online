@@ -17,7 +17,7 @@ const showNewsMenu = async (newsAll) => {
             const li = document.createElement('li');
             li.classList.add("mx-5")
             li.innerHTML = `
-            <a onclick="loadNews('${news.category_id}')" >${news.category_name}</a>
+            <a onclick="loadNews('${news.category_id}','${news.category_name}')" >${news.category_name}</a>
             `;
             newsMenu.appendChild(li);
         });
@@ -28,20 +28,25 @@ const showNewsMenu = async (newsAll) => {
 }
 
 const spinner = document.getElementById('spinner');
-const loadNews = async (categoryId) => {
+
+const loadNews = async (categoryId,categoryName) => {
     try {
+        const name = categoryName;
+        
         spinner.classList.remove('hidden');
         const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${categoryId}`);
         const data = await res.json();
-        displayNews(data.data);
+        displayNews(data.data,name);
+        
     } catch (error) {
         console.log(`The error: ${error}`);
     }
 
 }
-
-const displayNews = async (allNews) => {
+const news = "All News"
+const displayNews = async (allNews,name) => {
     try {
+        const categoryName = name;
         const items = allNews.length;
 
         const newsCard = document.getElementById('news-card');
@@ -55,7 +60,7 @@ const displayNews = async (allNews) => {
 
         if (allNews.length === 0){
             itemsCount.innerHTML = `
-                    <h3 class="md:text-2xl text-xl py-4 border px-3 rounded" > 0 items founds in this category</h3 > `
+                    <h3 class="md:text-2xl text-xl py-4 border px-3 rounded" > 0 items found for category ${name}</h3 > `
             newsCard.innerHTML = `<h2 class="text-4xl text-center text-teal-500	" > No Result Found</h2 > `;
             spinner.classList.add('hidden')
             return;
@@ -66,7 +71,7 @@ const displayNews = async (allNews) => {
         
         allNews.forEach(news => {
             itemsCount.innerHTML = `
-                    <h3 class="md:text-2xl text-xl py-4 border px-3 rounded" > ${items} items founds in this category</h3 > `
+                    <h3 class="md:text-2xl text-xl py-4 border px-3 rounded" > ${items} items found for category ${categoryName}</h3 > `;
             const div = document.createElement('div');
             div.classList.add("mb-6")
             div.innerHTML = `
@@ -119,11 +124,12 @@ const showDetails = (picture, title, rating,name,badge) => {
 
 }
 
-const allNews = async () => {
+const allNews = async (news) => {
     try {
+        const newsName = news;
         const res = await fetch(`https://openapi.programming-hero.com/api/news/category/08`);
         const data = await res.json();
-        displayNews(data.data);
+        displayNews(data.data,newsName);
 
     } catch (error) {
         console.log(`The error: ${error}`);
@@ -138,7 +144,8 @@ const newsSection = document.getElementById('news-section').addEventListener('cl
     blogsContainer.classList.add('hidden');
     const itemsCount = document.getElementById('items-count');
     itemsCount.classList.remove('hidden');
-    allNews();
+    allNews(news);
+    spinner.classList.remove('hidden');
 })
 
 const blogs = document.getElementById('blogs').addEventListener('click', function (){
@@ -155,5 +162,5 @@ const blogs = document.getElementById('blogs').addEventListener('click', functio
     itemsCount.classList.add('hidden');
 })
 
-allNews();
+allNews(news);
 loadNewsCategory()
