@@ -116,7 +116,7 @@ const showDetails = (picture, title, rating,name,badge) => {
     div.innerHTML = `
     <div  class="modal-box md:w-full w-64" >
                 <h3 class="font-bold text-lg mb-2">${title}</h3>
-                <img class="md:w-full h-96" src="${picture}" alt="">
+                <img class="w-full md:h-96 h-56" src="${picture}" alt="">
                 <p class="mt-4">Author Name: ${name}</p>
                 <h4 class="text-lg mt-2" class="py-4">Rating: ${rating}</h4>
                 <h4 class="text-lg mt-2" class="py-4">Bagde: ${badge}</h4>
