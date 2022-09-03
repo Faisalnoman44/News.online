@@ -91,7 +91,7 @@ const displayNews = async (allNews) => {
                                 <p>Views: ${news.total_view ? news.total_view : 'No views found'}</p>
                                 </div>
                                 <div>
-                                    <label onclick ="showDetails('${news.thumbnail_url}','${news.title}','${news.rating.number}','${news.author.name}','${news.rating.badge}')" for="my-modal" class="btn btn-accent">Details</label>
+                                    <label onclick ="showDetails('${news.thumbnail_url}','${news.title}','${news.rating.number}','${news.author.name ? news.author.name : 'No name found' }','${news.rating.badge}')" for="my-modal" class="btn btn-accent">Details</label>
                                 </div>
                              </div>
                     </div>
