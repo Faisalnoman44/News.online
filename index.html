@@ -14,8 +14,8 @@
 <body>
     <header>
         <!-- navbar  -->
-        <nav>
-            <div class="navbar bg-base-100">
+        <nav class="w-full border rounded-lg">
+            <div class="navbar bg-base-100 ">
                 <div class="flex-1">
                     <a class="btn btn-ghost normal-case text-xl">News.online</a>
                 </div>
@@ -28,7 +28,7 @@
                         </label>
                         <label tabindex="0" class="btn btn-ghost btn-circle ml-5 mr-4">
                             <div class="indicator">
-                                <span class="badge badge-sm indicator-item">Blogs</span>
+                                <span id="blogs" class="badge badge-sm indicator-item">Blogs</span>
                             </div>
                         </label>
 
@@ -56,14 +56,14 @@
         </nav>
         <!-- news section  -->
         <div class=" w-9/12 mx-auto flex justify-center">
-            <ul id="news-menu" class="menu menu-horizontal bg-base-100 rounded-box">
+            <ul id="news-menu" class="menu md:menu-horizontal menu-vertical bg-base-100 rounded-box">
 
             </ul>
     </header>
-    <main class="lg:w-10/12 w-full lg:p-0 p-3 mx-auto mt-10">
-         <!-- spinner  -->
-         <div>
-            <progress  id="spinner" class="progress w-full hidden"></progress>
+    <main id="main" class="lg:w-10/12 w-full lg:p-0 p-3 mx-auto mt-10">
+        <!-- spinner  -->
+        <div>
+            <progress id="spinner" class="progress w-full hidden"></progress>
         </div>
         <!-- no found result  -->
         <section id="not-found">
@@ -71,7 +71,7 @@
         </section>
         <section>
             <div id="items-count" class="my-4">
-                
+
             </div>
         </section>
         <section>
@@ -81,10 +81,143 @@
         </section>
 
         <!-- modal  -->
-        <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-        <div id="modal-body" class="modal modal-bottom sm:modal-middle">
-            <img src="" alt="">
+
+         
+        <input type="checkbox" id="my-modal" class="modal-toggle" />
+        <div id="modal-body" class="modal">
+            
         </div>
+       
+        <!-- acordion  -->
+        <section>
+            <div id="blogs-container" class="hidden">
+                <div class="max-w-2xl mx-auto bg-white p-16 rounded ">
+
+                    <div id="accordion-collapse" data-accordion="collapse">
+                        <h2 id="accordion-collapse-heading-1">
+                            <button type="button"
+                                class="flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium text-left border border-gray-200 dark:border-gray-700 border-b-0 text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-t-xl"
+                                data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                                aria-controls="accordion-collapse-body-1">
+                                <span>What is difference between var, let and const in JavaScript?</span>
+                                <svg data-accordion-icon class="w-6 h-6 shrink-0 rotate-180" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-1" aria-labelledby="accordion-collapse-heading-1">
+                            <div class="p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 border-b-0">
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">1.let: The let keyword declares a
+                                    block-scoped
+                                    local variable, optionally initializing it to a value.
+                                    Block-scoped means that the variable is only available within the block it was
+                                    declared in,
+                                    which is usually denoted by curly braces {}. <br>
+
+                                    2.var: The var keyword declares a function-scoped or global variable, optionally
+                                    initializing
+                                    it to a value.
+                                    Function-scoped means that the variable is only available within the function it was
+                                    declared in. Global variables are available throughout your entire code. <br>
+
+                                    3.const: The const keyword declares a block-scoped, immutable constant variable,
+                                    i.e. a
+                                    variable that can’t be reassigned.
+                                    Constants are also called “immutable variables”, but that’s a bit of a misnomer
+                                    since they
+                                    are actually variables – just ones that can’t be reassigned.</p>
+
+                            </div>
+                        </div>
+                        <h2 id="accordion-collapse-heading-2">
+                            <button type="button"
+                                class="flex items-center focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 justify-between p-5 w-full font-medium border border-gray-200 dark:border-gray-700 border-b-0 text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                                aria-controls="accordion-collapse-body-2">
+                                <span>Arrow Functions vs. Regular Functions in JavaScript</span>
+                                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-2" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-2">
+                            <div class="p-5 border border-gray-200 dark:border-gray-700 border-b-0">
+                                <p class="mb-2 text-gray-700 dark:text-gray-700">1.Implicit Return:
+                                    In regular function, you have to use return keyword to return any value. If you
+                                    don’t return
+                                    anything then the function will return undefined.Arrow functions behave in the same
+                                    way when
+                                    returning values.
+                                    If the arrow function contains one expression, you can omit the curly braces, and
+                                    then the
+                                    expression will be implicitly returned. <br>
+                                    2️. Arguments binding
+                                    In regular function, Arguments keywords can be used to access the arguments of which
+                                    passed
+                                    to function.Arrow functions do not have an arguments binding.However, if you want to
+                                    access
+                                    arguments in an arrow function, you can use the rest operator: <br>
+                                    3.In regular function, this changes according to the way that function is invoked.
+
+                                    Simple Invocation: this equals the global object or maybe undefined if you are using
+                                    strict
+                                    mode.
+                                    Method Invocation: this equals the object that owns the method.
+                                    Indirect Invocation: this equals the first argument.
+                                    Constructor Invocation: this equals the newly created instance.Arrow functions don’t
+                                    have
+                                    their own this, and they don’t redefine the value of this within the function.
+
+                                    this inside an arrow function always refers to this from the outer context.
+                                </p>
+                            </div>
+                        </div>
+                        <h2 id="accordion-collapse-heading-3">
+                            <button type="button"
+                                class="flex items-center border focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 border-gray-200 dark:border-gray-700 justify-between p-5 w-full font-medium text-left text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                                data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                                aria-controls="accordion-collapse-body-3">
+                                <span>What are the differences .forEach(), .map(), .filter(),
+                                    .find()</span>
+                                <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-collapse-body-3" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-3">
+                            <div class="p-5 border border-gray-200 dark:border-gray-700 border-t-0">
+                                <p class="mb-2 text-gray-700 dark:text-gray-700">.forEach(), is used to execute the same
+                                    code on
+                                    every element in an array but does not change the array and it returns undefined.
+                                    <br>
+                                    .map() executes the same code on every element in an array and returns a new array
+                                    with the
+                                    updated elements. <br>
+                                    .filter() checks every element in an array to see if it meets a certain criteria and
+                                    returns a new array with the elements that return truthy for the criteria. <br>
+                                    .find() When you want to select a single element from an array.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <script src="https://unpkg.com/flowbite@1.3.3/dist/flowbite.js"></script>
+
+                </div>
+            </div>
+        </section>
     </main>
     <script src="js/app.js"></script>
 </body>
