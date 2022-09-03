@@ -27,7 +27,7 @@ const loadNews = async (categoryId) => {
 const displayNews = async (allNews) => {
     // console.log(allNews)
     const newsCard = document.getElementById('news-card');
-    newsCard.innerText = '';
+    newsCard.innerHTML = '';
 
     const notFound = document.getElementById('not-found');
     notFound.innerHTML = '';
@@ -39,9 +39,11 @@ const displayNews = async (allNews) => {
 
     allNews.forEach(news => {
         console.log(news);
-        newsCard.innerHTML = `
-            <div class="card card-side bg-base-100 shadow-xl">
-                 <figure class="w-9/12"><img class="h-full" src="${news.image_url}/100/180/arch" alt="Movie"></figure>
+        const div = document.createElement('div');
+        div.classList.add("mb-6")
+        div.innerHTML = `
+            <div class="card h-80 sm:card-side bg-base-100 shadow-xl">
+                 <figure class="w-8/12"><img class="h-80 w-80" src="${news.image_url}/100/180/" alt=""></figure>
                  <div class="card-body">
                          <h2 class="card-title">${news.title}</h2>
                          <p class="mb-3">${news.details.slice(0,200)+'...'}</p>
@@ -57,8 +59,9 @@ const displayNews = async (allNews) => {
                             </div>
                          </div>
                 </div>
-            </div>
-    `});
+            </div>`
+        newsCard.appendChild(div);
+        });
 
 }
 
