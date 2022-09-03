@@ -23,7 +23,7 @@
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn btn-ghost btn-circle">
                             <div class="indicator">
-                                <span class="badge badge-sm indicator-item">News</span>
+                                <span id="news-section" class="badge badge-sm indicator-item">News</span>
                             </div>
                         </label>
                         <label tabindex="0" class="btn btn-ghost btn-circle ml-5 mr-4">
@@ -60,10 +60,19 @@
 
             </ul>
     </header>
-    <main class="w-9/12 mx-auto mt-10">
+    <main class="lg:w-10/12 w-full lg:p-0 p-3 mx-auto mt-10">
+         <!-- spinner  -->
+         <div>
+            <progress class="progress w-full"></progress>
+        </div>
         <!-- no found result  -->
         <section id="not-found">
 
+        </section>
+        <section>
+            <div id="items-count" class="my-4">
+                
+            </div>
         </section>
         <section>
             <div id="news-card" class="grow grid grid-cols-1">
