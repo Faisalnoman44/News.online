@@ -65,8 +65,6 @@ const displayNews = async (allNews) => {
         })
         
         allNews.forEach(news => {
-           
-            console.log(news)
             itemsCount.innerHTML = `
                     <h3 class="md:text-2xl text-xl py-4 border px-3 rounded" > ${items} items founds in this category</h3 > `
             const div = document.createElement('div');
@@ -118,8 +116,6 @@ const showDetails = (picture, title, rating,name,badge) => {
                 </div>
             </div>`;
     modalBody.appendChild(div);
-
-
 
 }
 
