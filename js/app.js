@@ -115,11 +115,11 @@ const showDetails = (picture, title, rating,name,badge) => {
     const div = document.createElement('div');
     div.innerHTML = `
     <div  class="modal-box md:w-full w-64" >
-                <h3 class="font-bold text-lg mb-2">${title}</h3>
-                <img class="w-full md:h-96 h-56" src="${picture}" alt="">
-                <p class="mt-4">Author Name: ${name}</p>
-                <h4 class="text-lg mt-2" class="py-4">Rating: ${rating}</h4>
-                <h4 class="text-lg mt-2" class="py-4">Bagde: ${badge}</h4>
+                <h3 class="font-bold text-lg mb-2">${title ? title : 'No title found'}</h3>
+                <img class="w-full md:h-96 h-56" src="${picture ? picture : 'No picture found'}" alt="">
+                <p class="mt-4">Author Name: ${name ? name : 'No name found'}</p>
+                <h4 class="text-lg mt-2" class="py-4">Rating: ${rating ? rating : 'No rating found'}</h4>
+                <h4 class="text-lg mt-2" class="py-4">Bagde: ${badge ? badge : 'No badge found'}</h4>
                 <div class="modal-action">
                     <label for="my-modal" class="btn">Close</label>
                 </div>
